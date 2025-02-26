@@ -1,0 +1,35 @@
+#container {
+    display: grid;
+    grid-template-areas: 
+    'hd hd'
+    'as main'
+    'sec sec'
+    'ft ft';
+    grid-template-columns: 1fr 70%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+header {
+    grid-area: hd;
+    background: green;
+}
+
+aside {
+    grid-area: as;
+    background: red;
+}
+
+main {
+    grid-area: main;
+    background: blue
+}
+
+section {
+    grid-area: sec;
+    background: yellow;
+}
+
+footer {
+    grid-area: ft;
+    background: white;
+}
