@@ -2,8 +2,9 @@ body{
     margin: 0;
     background-color: #fafafa;
     color: #0d2134;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
+    text-align: center;
 }
 
 #container1 {
@@ -24,9 +25,12 @@ body{
     display: grid;
     grid-template-areas:
     'hd hd'
-    'as2 as2'
+    'sec1 sec1'
     'main2 main2'
+    'training training'
+    'as2 as2'
     'sec2 sec2'
+    'PT PT'
     'ft ft';
     grid-template-columns: 70% 1fr;
     
@@ -36,11 +40,13 @@ body{
     display: grid;
     grid-template-areas:
     'hd hd'
+    'sec1 sec1'
     'as3 as3'
     'main3 main3'
+    'art3 art3'
     'sec3 sec3'
     'ft ft';
-    grid-template-columns: 1fr 1fr;
+
     
 }
 
@@ -48,6 +54,7 @@ body{
     display: grid;
     grid-template-areas:
     'hd hd'
+    'sec1 sec1'
     'main4 main4'
     'as4 as4'
     'sec4 sec4'
@@ -71,7 +78,7 @@ body{
     object-fit: cover;
 }
 
-#logo{
+.logo{
     background-image: url("../img/fulllogo.png");
     height: 100px;
     width: 100px;
@@ -114,8 +121,8 @@ header {
 #recentioner{
     display: flex;
     justify-content: space-around;
-    gap: 10px;
-    margin: 10px;
+    gap: 40px;
+    margin: 40px;
 }
 
 .rec{
@@ -158,7 +165,8 @@ header {
 }
 
 .menu a:hover{
-    background-color: aqua;
+    background-color: #FFD700;
+    color: #0d2134;
 }
 
 a{
@@ -209,6 +217,7 @@ aside img{
 width: 100%;
 height: 100%;
 border-radius: 4px;
+object-fit: cover;
 }
 
 #as1{
@@ -218,12 +227,23 @@ border-radius: 4px;
     margin-left: 10px;
 }
 
+#as2 h5{
+    font-size:1rem;
+}
+
 #as2{
     grid-area:as2;
     margin-top: 10px;
-    margin-bottom: 10px;
     margin-right: 10px;
     padding: 1rem;
+    padding-top: 4rem;
+}
+
+#as3 img{
+    height: auto;
+    margin-top:-6px;
+    margin-bottom: 10px;
+    
 }
 
 #as3{
@@ -231,7 +251,9 @@ border-radius: 4px;
     margin-left: 10px;
     margin-right: 10px;
     padding: 1rem;
-    
+    background: #fafafa;
+    border-radius: none;
+    box-shadow: none;
 }
 
 #as4{
@@ -243,29 +265,55 @@ border-radius: 4px;
 
 main{
     background: #ffffff;
-    padding: 1rem;
+    padding: 3rem;
     margin: 10px;
     color: #0d2134;
     border-radius: 4px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    
 }
 
 #main1{
     grid-area: main1;
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 #main2{
     grid-area: main2;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+#training{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#training img{
+    width: 100%;
+    object-fit: cover;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 #main3{
     grid-area: main3;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+    
 }
 
 #main4{
     grid-area: main4;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 section{
@@ -282,17 +330,19 @@ section{
     grid-area: sec1;
     margin-top: 10px;
     padding: 0;
+    position: relative;
+    z-index: 1;
 }
 
 #bakgrund_med_text{
     background-image: url("../img/slogan_png.png");
-    background-size: cover;  /* Gör så att bilden täcker hela sektionen */
-    background-position: center;  /* Centrera bilden */
-    background-repeat: no-repeat;  /* Se till att den inte upprepas */
-    height: 300px;  /* Justera höjden efter behov */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    height: 300px;
     display: flex;
     align-items: center;
-    justify-content: center;  /* Centrera texten vertikalt */
+    justify-content: center;
     font-size: 2rem;
     font-weight: bold;
     color: #FFD700;
@@ -303,13 +353,124 @@ section{
 
 #sec2{
     grid-area: sec2;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding: 2rem;
+    background: #fafafa;
+    padding: 1rem;
+    box-shadow: none;
+    border-radius: none;
+    
+}
+
+.training-grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.training-box {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 56.25%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative; 
+}
+
+#tra1{
+    background-image: url("../img/strength-png.png");
+}
+#tra2{
+    background-image: url("../img/cardio.avif");    
+}
+#tra3{
+    background-image: url("../img/yoga.avif");    
+}
+#tra4{
+    background-image: url("../img/padel.avif");
+    
+}
+#tra5{
+    background-image: url("../img/pilates.avif");
+    
+}
+#tra6{
+    background-image: url("../img/zumba.avif");
+    
+}
+#tra7{
+    background-image: url("../img/spinning.avif");
+    
+}
+#tra8{
+    background-image: url("../img/trx.avif");
+    
+}
+#tra9{
+    background-image: url("../img/climbing-png.png");
+    
+}
+
+#PT{
+    grid-area: PT;
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 1rem;
+}
+
+
+.whitebackground{
+    background-color:rgba(255, 255, 255, 0.7);
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+}
+
+
+.training-box:hover{
+    transform: scale(1.1);
+}
+#sec2 h2{
+    justify-self: center;
+    padding: 1rem;
+    font-size: 2rem;
+    
 }
 
 #sec3{
     grid-area: sec3;
-    margin-top: 10px;
+    margin-top: -5px;
+    background: #fafafa;
+    box-shadow: none;
+    border-radius: none;
+    color: #0d2134;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    z-index: 0;
+}
+
+#sec3 h2{
+    justify-self: center;
+    padding: 1rem;
+}
+
+#border{
+    border: solid #FFD700 3px;
+}
+
+.tavling-box{
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    margin-bottom: 1rem;
+
 }
 
 #sec4{
@@ -317,11 +478,12 @@ section{
     
 }
 
-article{
-    
+article{ 
     padding: 1rem;
     color: #0d2134;
-    
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
@@ -329,14 +491,26 @@ article{
 
 #art1{
     grid-area: art1;
-    
+    background: #fafafa;
+    border-radius: none;
+    box-shadow: none;
+}
+
+#art3{
+    grid-area: art3;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 #art4{
-    grid-area: art4;  
-    background: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    grid-area: art4;
+    margin-top: 0px;
+}
+
+#art4 img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 footer {
@@ -363,8 +537,7 @@ footer h4{
         'sec1 sec1'
         'as1 main1'
         'div1 div1'
-        'art1 art1'
-        
+        'art1 art1'    
         'div2 div2'
         'ft ft';
     }
@@ -372,23 +545,29 @@ footer h4{
         grid-template-areas: 
         'hd hd'
         'nav nav'
+        'sec1 sec1'
         'main2 as2'
+        'training as2'
         'sec2 sec2'
+        'PT PT'
         'ft ft';
     }
     #container3{
         grid-template-areas: 
-        'hd hd'
-        'nav nav'
-        'main3 sec3'
-        'as3 sec3'
-        'ft ft';
+        'hd hd hd'
+        'nav nav nav'
+        'sec1 sec1 sec1'
+        'as3 main3 sec3'
+        'art3 art3 sec3'
+        'ft ft ft';
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     #container4{
         grid-template-areas: 
         'hd hd hd'
         'nav nav nav'
+        'sec1 sec1 sec1'
         'main4 main4 main4'
         'as4 sec4 art4'
         'ft ft ft';
@@ -408,6 +587,13 @@ footer h4{
         display: flex;
         justify-content: space-around;
 
+    }
+    .training-grid{
+        grid-template-areas: 
+        'tra1 tra2 tra3'
+        'tra4 tra5 tra6'
+        'tra7 tra8 tra9';
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     header{
