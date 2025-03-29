@@ -2,26 +2,25 @@ body{
     margin: 0;
     background-color: #fafafa;
     color: #0d2134;
-    width: 100vb;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 #container1 {
-    height: 100vh;
     display: grid;
     grid-template-areas: 
     'hd hd'
+    'sec1 sec1'
+    'main1 main1'
+    'as1 as1'
     'div1 div1'
     'art1 art1'
-    'as1 as1'
-    'main1 main1'
-    'sec1 sec1'
+    'div2 div2'
     'ft ft';
     grid-template-columns: 1fr 70%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 #container2{
-    height: 100vh;
     display: grid;
     grid-template-areas:
     'hd hd'
@@ -30,11 +29,10 @@ body{
     'sec2 sec2'
     'ft ft';
     grid-template-columns: 70% 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    
 }
 
 #container3{
-    height: 100vh;
     display: grid;
     grid-template-areas:
     'hd hd'
@@ -43,11 +41,10 @@ body{
     'sec3 sec3'
     'ft ft';
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    
 }
 
 #container4{
-    height: 100vh;
     display: grid;
     grid-template-areas:
     'hd hd'
@@ -57,53 +54,43 @@ body{
     'art4 art4'
     'ft ft';
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    
 }
 
-#gyms{
-    display: flex;
-    justify-content: space-around;
-}
-
-#gym1{
+.box{
     background-color: #ffffff;
     border-radius: 4px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     padding: 1rem;
-}
-#gym2{
-    background-color: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
-    padding: 1rem;
-}
-#gym3{
-    background-color: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
-    padding: 1rem;
-}
-#gym4{
-    background-color: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
-    padding: 1rem;
+    margin: 10px;
 }
 
+.box img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
 
+#logo{
+    background-image: url("../img/fulllogo.png");
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+
+}
 
 header {
     grid-area: hd;
     background: #0d2134;
     color: #fafafa;
     display: flex;
-    justify-content: center;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    font-size: 5rem;
+    font-size: 2rem;
     border-radius: 4px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4)
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 .menu-button i.material-icons{
@@ -114,6 +101,31 @@ header {
 .logo {
     display: none;
 }
+
+#medlemmar{
+    grid-area: div2;
+}
+
+#medlemmar h2{
+    justify-self: center;
+    padding-top: 1rem;
+}
+
+#recentioner{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 10px;
+}
+
+.rec{
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    width: 300%;
+}
+
 
 .menu {
     background-color: #0d2134;
@@ -129,28 +141,33 @@ header {
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4)
-    
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    font-size: 1.3rem; 
 }
+
 
 .menu a{
     flex:1;
-    height: 100%;
+    height: auto;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    text-decoration: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .menu a:hover{
     background-color: aqua;
 }
 
-a {
+a{
     text-decoration: none;
     color:#fafafa;
+}
+
+article a{
+    color:#0d2134;
 }
 
 
@@ -183,10 +200,15 @@ a {
 
 aside{
     background: #ffffff;
-    padding: 1rem;
     color: #0d2134;
     border-radius: 4px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+aside img{
+width: 100%;
+height: 100%;
+border-radius: 4px;
 }
 
 #as1{
@@ -201,12 +223,14 @@ aside{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 10px;
+    padding: 1rem;
 }
 
 #as3{
     grid-area:as3;
     margin-left: 10px;
     margin-right: 10px;
+    padding: 1rem;
     
 }
 
@@ -214,6 +238,7 @@ aside{
     grid-area:as4;
     margin-left: 10px;
     margin-right: 10px;
+    padding: 1rem;
 }
 
 main{
@@ -227,7 +252,8 @@ main{
 
 #main1{
     grid-area: main1;
-    
+    display: flex;
+    align-items: center;
 }
 
 #main2{
@@ -248,14 +274,32 @@ section{
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     border-radius: 4px;
     color: #0d2134;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #sec1{
     grid-area: sec1;
-    margin-left: 10px;
-    margin-right: 10px;
-
+    margin-top: 10px;
+    padding: 0;
 }
+
+#bakgrund_med_text{
+    background-image: url("../img/slogan_png.png");
+    background-size: cover;  /* Gör så att bilden täcker hela sektionen */
+    background-position: center;  /* Centrera bilden */
+    background-repeat: no-repeat;  /* Se till att den inte upprepas */
+    height: 300px;  /* Justera höjden efter behov */
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Centrera texten vertikalt */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700;
+    border-radius: 4px;
+    
+}
+
 
 #sec2{
     grid-area: sec2;
@@ -286,7 +330,6 @@ article{
 #art1{
     grid-area: art1;
     
-
 }
 
 #art4{
@@ -304,17 +347,25 @@ footer {
     flex-direction: column;
     justify-content: space-around;
     margin-top: 10px;
+    color: #fafafa;
 }
 
-@media (min-width: 600px) {
+footer h4{
+    color: #FFD700;
+    font-size: 1.3rem;
+}
+
+@media (min-width: 900px) {
     #container1 {
         grid-template-areas: 
         'hd hd'
         'nav nav'
+        'sec1 sec1'
+        'as1 main1'
         'div1 div1'
         'art1 art1'
-        'as1 main1'
-        'sec1 sec1'
+        
+        'div2 div2'
         'ft ft';
     }
     #container2{
@@ -353,6 +404,11 @@ footer {
         flex-direction: row;
         justify-content: space-around;
     }
+    #gyms{
+        display: flex;
+        justify-content: space-around;
+
+    }
 
     header{
         border-radius: 0px;
@@ -368,9 +424,6 @@ footer {
 
     #main1{
         display: grid;
-        grid-template-areas: 
-        'i1 i2'
-        'i3 i4';
     }
 
     footer{
