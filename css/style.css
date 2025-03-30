@@ -4,7 +4,24 @@ body{
     color: #0d2134;
     width: 100%;
     overflow-x: hidden;
-    text-align: center;
+    text-align: left;
+    font-family: "Raleway", sans-serif;
+}
+
+h1{
+    font-size: 68px;
+}
+
+h2{
+    font-size: 42px;
+}
+
+p{
+    font-size: 16px;
+}
+
+.menu a{
+    font-size: 26px;
 }
 
 #container1 {
@@ -46,7 +63,7 @@ body{
     'art3 art3'
     'sec3 sec3'
     'ft ft';
-
+    grid-template-rows: auto;
     
 }
 
@@ -56,16 +73,16 @@ body{
     'hd hd'
     'sec1 sec1'
     'main4 main4'
+    'art4 art4'
     'as4 as4'
     'sec4 sec4'
-    'art4 art4'
     'ft ft';
     grid-template-columns: 1fr 1fr;
     
 }
 
 .box{
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border-radius: 4px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     padding: 1rem;
@@ -88,6 +105,9 @@ body{
 
 header {
     grid-area: hd;
+    position: sticky;
+    top: 0;
+    z-index: 2;
     background: #0d2134;
     color: #fafafa;
     display: flex;
@@ -98,6 +118,7 @@ header {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     padding-left: 3rem;
     padding-right: 3rem;
+    font-family: "Lora", serif;
 }
 
 .menu-button i.material-icons{
@@ -118,19 +139,12 @@ header {
     padding-top: 1rem;
 }
 
-#recentioner{
-    display: flex;
-    justify-content: space-around;
-    gap: 40px;
-    margin: 40px;
-}
-
 .rec{
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border-radius: 4px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     padding: 1rem;
-    width: 300%;
+    margin-bottom: 5px;
 }
 
 
@@ -138,10 +152,10 @@ header {
     background-color: #0d2134;
     color: #fafafa;
     height: 100vh;
-    width: 80vw;
+    width: 70vw;
     position: fixed;
     top: 0;
-    left: -80vw;
+    left: -70vw;
     transition: left 0.3s;
     z-index: 10;
     display: flex;
@@ -203,11 +217,15 @@ article a{
     display: flex;
     justify-content: center;
     padding-top: 2rem;
-    padding-bottom: 1,5rem;
+    padding-bottom: 1rem;
+}
+
+#medlemmar h2{
+    padding-bottom: 2rem;
 }
 
 aside{
-    background: #ffffff;
+    background: #f9f9f9;
     color: #0d2134;
     border-radius: 4px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
@@ -243,6 +261,9 @@ object-fit: cover;
     height: auto;
     margin-top:-6px;
     margin-bottom: 10px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     
 }
 
@@ -252,8 +273,9 @@ object-fit: cover;
     margin-right: 10px;
     padding: 1rem;
     background: #fafafa;
-    border-radius: none;
+    border-radius: 0;
     box-shadow: none;
+    object-fit: cover;
 }
 
 #as4{
@@ -264,7 +286,7 @@ object-fit: cover;
 }
 
 main{
-    background: #ffffff;
+    background: #f9f9f9;
     padding: 3rem;
     margin: 10px;
     color: #0d2134;
@@ -289,13 +311,14 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 #training img{
     width: 100%;
     object-fit: cover;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 10px;    
     margin-top: 10px;
     border-radius: 4px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
@@ -304,7 +327,7 @@ main{
 #main3{
     grid-area: main3;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
-    margin-bottom: 40px;
+    margin: 20px;
     
 }
 
@@ -317,7 +340,7 @@ main{
 }
 
 section{
-    background: #ffffff;
+    background: #f9f9f9;
     padding: 1rem;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     border-radius: 4px;
@@ -330,12 +353,13 @@ section{
     grid-area: sec1;
     margin-top: 10px;
     padding: 0;
+    margin: 15px;
     position: relative;
     z-index: 1;
 }
 
 #bakgrund_med_text{
-    background-image: url("../img/slogan_png.png");
+    background-image: url("../img/water.avif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;  
@@ -345,9 +369,13 @@ section{
     justify-content: center;
     font-size: 2rem;
     font-weight: bold;
-    color: #FFD700;
     border-radius: 4px;
-    
+
+}
+
+
+.whitebackground h2{
+    padding:1rem;
 }
 
 
@@ -357,7 +385,7 @@ section{
     background: #fafafa;
     padding: 1rem;
     box-shadow: none;
-    border-radius: none;
+    border-radius: 0;
     
 }
 
@@ -414,10 +442,28 @@ section{
 
 #PT{
     grid-area: PT;
-    background-color: #ffffff;
-    border-radius: 4px;
     margin: 10px;
     padding: 1rem;
+    display: grid;
+    grid-template-areas: 'PT-text PT-bild';
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+}
+
+#PT-text{
+    grid-area: PT-text;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+#PT-bild{
+    grid-area: PT-bild;
+    height: 600px;
+    margin-left: 3.5rem;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -444,10 +490,10 @@ section{
 
 #sec3{
     grid-area: sec3;
-    margin-top: -5px;
+    margin-top: 20px;
     background: #fafafa;
     box-shadow: none;
-    border-radius: none;
+    border-radius: 0;
     color: #0d2134;
     margin-left: 10px;
     margin-right: 10px;
@@ -460,12 +506,10 @@ section{
     padding: 1rem;
 }
 
-#border{
-    border: solid #FFD700 3px;
-}
+
 
 .tavling-box{
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border-radius: 4px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     padding: 1rem;
@@ -481,7 +525,7 @@ section{
 article{ 
     padding: 1rem;
     color: #0d2134;
-    background: #ffffff;
+    background: #f9f9f9;
     border-radius: 4px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     margin-left: 10px;
@@ -492,7 +536,7 @@ article{
 #art1{
     grid-area: art1;
     background: #fafafa;
-    border-radius: none;
+    border-radius: 0;
     box-shadow: none;
 }
 
@@ -505,12 +549,20 @@ article{
 #art4{
     grid-area: art4;
     margin-top: 0px;
+    background-color: #fafafa;
+    box-shadow: none;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+
 }
 
 #art4 img{
+    height: 100%;
     width: 100%;
-    height: 300px;
     object-fit: cover;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
 }
 
 footer {
@@ -522,6 +574,7 @@ footer {
     justify-content: space-around;
     margin-top: 10px;
     color: #fafafa;
+    text-align: left;
 }
 
 footer h4{
@@ -573,9 +626,39 @@ footer h4{
         'ft ft ft';
         grid-template-columns: 1fr 1fr 1fr;
     }
+    #sec1{
+        margin: 0;
+    }
+    
+
+    header{
+        position: relative;
+    }
+
+    #art4 img{
+        height: 100%;
+        width: 240px;
+    }
+
+    #recentioner{
+        display: flex;
+        justify-content: space-around;
+        height: auto;
+    }
+
+    .rec{
+        width: 300px;
+        margin: 5px;
+    }
+
+
+    #sec3{
+        margin-top: -5px;
+    }
+    
     .menu {
         grid-area: nav;
-        width: 100vw;
+        width: 100%;
         position: relative;
         left: 0;
         height: auto;
